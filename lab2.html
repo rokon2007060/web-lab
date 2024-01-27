@@ -1,6 +1,43 @@
 <!DOCTYPE html>
 <html>
 <head>
+
+    <!-- Add this script at the end of your HTML file or in a separate JavaScript file -->
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+      // Add smooth scroll behavior to all anchor links with a hash (#)
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+  
+          const targetId = this.getAttribute('href').substring(1);
+          const targetElement = document.getElementById(targetId);
+  
+          if (targetElement) {
+            window.scrollTo({
+              top: targetElement.offsetTop,
+              behavior: 'smooth'
+            });
+          }
+        });
+      });
+
+      function adjustContentPadding() {
+                const navbarHeight = document.querySelector('.navbar').offsetHeight;
+                document.querySelectorAll('.content').forEach(content => {
+                    content.style.paddingTop = navbarHeight + 'px';
+                });
+            }
+
+            // Initial adjustment
+            adjustContentPadding();
+
+            // Re-adjust on window resize
+            window.addEventListener('resize', adjustContentPadding);
+    });
+  </script>
+  
+
     <title>Al Shahriar Rokon</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="new_style.css">
@@ -14,26 +51,163 @@
         <br>
         <h2 style="color: rgb(34, 2, 2);"> Hello , I am Al Shahriar Rokon <br> a <span style="color: darkblue;">CSE</span> student in <span style="color: darkblue;">KUET</span></h2>
     </div>
+
+
     <div style="margin: 5px;" class="navbar">
-        <a>Introduction</a>
+        <a href="#Introduction">Introduction</a>
         <div class="dropdown">
-          <button class="dropbtn">Academic
-            <i class="fa fa-caret-down"></i>
-          </button>
+          <a href="#Academic">Academic <i class="fa fa-caret-down"></i></a>
           <div class="dropdown-content">
             <a>School</a>
             <a>College</a>
             <a>University</a>
           </div>
         </div>
-        <a>Professional</a>
-        <a>Projects</a>
-        <a>Awards</a>
-        <a>Family</a>
-        <a>Hobbies</a>
-        <a>Contacts</a>
-
+        <a href="#Professional">Professional</a>
+        <a href="#Projects">Projects</a>
+        <a href="#Awards">Awards</a>
+        <a href="#Family">Family</a>
+        <a href="#Hobbies">Hobbies</a>
+        <a href="#Contacts">Contacts</a>
       </div>
+
+
+
+      <div style="font-size: large;" id="Introduction" class="content">
+        <h2>Introduction</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.<br>
+        Earum, id illo illum voluptas quod eius pariatur nihil necessitatibus voluptatem iusto corporis <br>
+        saepe facilis adipisci dolorem dolore accusamus, quasi, laudantium consequuntur!
+        <br>Lorem ipsum dolor sit amet consectetur adipisicing elit.<br>
+        Earum, id illo illum voluptas quod eius pariatur nihil necessitatibus voluptatem iusto corporis <br>
+        saepe facilis adipisci dolorem dolore accusamus, quasi, laudantium consequuntur!
+        <br>
+        Earum, id illo illum voluptas quod eius pariatur nihil necessitatibus voluptatem iusto corporis <br>
+        saepe facilis adipisci dolorem dolore accusamus, quasi, laudantium consequuntur!
+        <br>Lorem ipsum dolor sit amet consectetur adipisicing elit.<br>
+        Earum, id illo illum voluptas quod eius pariatur nihil necessitatibus voluptatem iusto corporis <br>
+        saepe facilis adipisci dolorem dolore accusamus, quasi, laudantium consequuntur!</p></div>
+
+        <div class="content" id="Academic" style="font-size: large;">
+            <h2>Academic</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.<br>
+            Earum, id illo illum voluptas quod eius pariatur nihil necessitatibus voluptatem iusto corporis <br>
+            saepe facilis adipisci dolorem dolore accusamus, quasi, laudantium consequuntur!
+            <br>Lorem ipsum dolor sit amet consectetur adipisicing elit.<br>
+            Earum, id illo illum voluptas quod eius pariatur nihil necessitatibus voluptatem iusto corporis <br>
+            saepe facilis adipisci dolorem dolore accusamus, quasi, laudantium consequuntur!
+            <br>
+            Earum, id illo illum voluptas quod eius pariatur nihil necessitatibus voluptatem iusto corporis <br>
+            saepe facilis adipisci dolorem dolore accusamus, quasi, laudantium consequuntur!
+            <br>Lorem ipsum dolor sit amet consectetur adipisicing elit.<br>
+            Earum, id illo illum voluptas quod eius pariatur nihil necessitatibus voluptatem iusto corporis <br>
+            saepe facilis adipisci dolorem dolore accusamus, quasi, laudantium consequuntur!</p></div>
+
+        <div class="content" id="Professional" style="font-size: large;">
+            <h2>Professional</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.<br>
+            Earum, id illo illum voluptas quod eius pariatur nihil necessitatibus voluptatem iusto corporis <br>
+            saepe facilis adipisci dolorem dolore accusamus, quasi, laudantium consequuntur!
+            <br>Lorem ipsum dolor sit amet consectetur adipisicing elit.<br>
+            Earum, id illo illum voluptas quod eius pariatur nihil necessitatibus voluptatem iusto corporis <br>
+            saepe facilis adipisci dolorem dolore accusamus, quasi, laudantium consequuntur!
+            <br>
+            Earum, id illo illum voluptas quod eius pariatur nihil necessitatibus voluptatem iusto corporis <br>
+            saepe facilis adipisci dolorem dolore accusamus, quasi, laudantium consequuntur!
+            <br>Lorem ipsum dolor sit amet consectetur adipisicing elit.<br>
+            Earum, id illo illum voluptas quod eius pariatur nihil necessitatibus voluptatem iusto corporis <br>
+            saepe facilis adipisci dolorem dolore accusamus, quasi, laudantium consequuntur!</p></div>
+
+        <div class="content" id="Projects" style="font-size: large;">
+            <h2>Projects</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.<br>
+            Earum, id illo illum voluptas quod eius pariatur nihil necessitatibus voluptatem iusto corporis <br>
+            saepe facilis adipisci dolorem dolore accusamus, quasi, laudantium consequuntur!
+            <br>Lorem ipsum dolor sit amet consectetur adipisicing elit.<br>
+            Earum, id illo illum voluptas quod eius pariatur nihil necessitatibus voluptatem iusto corporis <br>
+            saepe facilis adipisci dolorem dolore accusamus, quasi, laudantium consequuntur!
+            <br>
+            Earum, id illo illum voluptas quod eius pariatur nihil necessitatibus voluptatem iusto corporis <br>
+            saepe facilis adipisci dolorem dolore accusamus, quasi, laudantium consequuntur!
+            <br>Lorem ipsum dolor sit amet consectetur adipisicing elit.<br>
+            Earum, id illo illum voluptas quod eius pariatur nihil necessitatibus voluptatem iusto corporis <br>
+            saepe facilis adipisci dolorem dolore accusamus, quasi, laudantium consequuntur!</p></div>
+
+        <div class="content" id="Awards" style="font-size: large;">
+            <h2>Awards</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.<br>
+            Earum, id illo illum voluptas quod eius pariatur nihil necessitatibus voluptatem iusto corporis <br>
+            saepe facilis adipisci dolorem dolore accusamus, quasi, laudantium consequuntur!
+            <br>Lorem ipsum dolor sit amet consectetur adipisicing elit.<br>
+            Earum, id illo illum voluptas quod eius pariatur nihil necessitatibus voluptatem iusto corporis <br>
+            saepe facilis adipisci dolorem dolore accusamus, quasi, laudantium consequuntur!
+            <br>
+            Earum, id illo illum voluptas quod eius pariatur nihil necessitatibus voluptatem iusto corporis <br>
+            saepe facilis adipisci dolorem dolore accusamus, quasi, laudantium consequuntur!
+            <br>Lorem ipsum dolor sit amet consectetur adipisicing elit.<br>
+            Earum, id illo illum voluptas quod eius pariatur nihil necessitatibus voluptatem iusto corporis <br>
+            saepe facilis adipisci dolorem dolore accusamus, quasi, laudantium consequuntur!</p></div>
+
+        <div class="content" id="Family" style="font-size: large;">
+            <h2>Family</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.<br>
+            Earum, id illo illum voluptas quod eius pariatur nihil necessitatibus voluptatem iusto corporis <br>
+            saepe facilis adipisci dolorem dolore accusamus, quasi, laudantium consequuntur!
+            <br>Lorem ipsum dolor sit amet consectetur adipisicing elit.<br>
+            Earum, id illo illum voluptas quod eius pariatur nihil necessitatibus voluptatem iusto corporis <br>
+            saepe facilis adipisci dolorem dolore accusamus, quasi, laudantium consequuntur!
+            <br>
+            Earum, id illo illum voluptas quod eius pariatur nihil necessitatibus voluptatem iusto corporis <br>
+            saepe facilis adipisci dolorem dolore accusamus, quasi, laudantium consequuntur!
+            <br>Lorem ipsum dolor sit amet consectetur adipisicing elit.<br>
+            Earum, id illo illum voluptas quod eius pariatur nihil necessitatibus voluptatem iusto corporis <br>
+            saepe facilis adipisci dolorem dolore accusamus, quasi, laudantium consequuntur!</p></div>
+
+        <div  class="content" id="Hobbies" style="font-size: large;">
+            <h2>Hobbies</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.<br>
+            Earum, id illo illum voluptas quod eius pariatur nihil necessitatibus voluptatem iusto corporis<br> 
+            saepe facilis adipisci dolorem dolore accusamus, quasi, laudantium consequuntur!
+            <br>Lorem ipsum dolor sit amet consectetur adipisicing elit.<br>
+            Earum, id illo illum voluptas quod eius pariatur nihil necessitatibus voluptatem iusto corporis <br>
+            saepe facilis adipisci dolorem dolore accusamus, quasi, laudantium consequuntur!
+            <br>
+            Earum, id illo illum voluptas quod eius pariatur nihil necessitatibus voluptatem iusto corporis <br>
+            saepe facilis adipisci dolorem dolore accusamus, quasi, laudantium consequuntur!
+            <br>Lorem ipsum dolor sit amet consectetur adipisicing elit.<br>
+            Earum, id illo illum voluptas quod eius pariatur nihil necessitatibus voluptatem iusto corporis <br>
+            saepe facilis adipisci dolorem dolore accusamus, quasi, laudantium consequuntur!</p></div>
+
+        <div class="content" id="Contacts" style="font-size: large;">
+            <h2>Contacts</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. <br>
+            Earum, id illo illum voluptas quod eius pariatur nihil necessitatibus voluptatem iusto corporis <br>
+            saepe facilis adipisci dolorem dolore accusamus, quasi, laudantium consequuntur!
+            <br>Lorem ipsum dolor sit amet consectetur adipisicing elit.<br>
+            Earum, id illo illum voluptas quod eius pariatur nihil necessitatibus voluptatem iusto corporis <br>
+            saepe facilis adipisci dolorem dolore accusamus, quasi, laudantium consequuntur!
+            <br>
+            Earum, id illo illum voluptas quod eius pariatur nihil necessitatibus voluptatem iusto corporis <br>
+            saepe facilis adipisci dolorem dolore accusamus, quasi, laudantium consequuntur!
+            <br>Lorem ipsum dolor sit amet consectetur adipisicing elit.<br>
+            Earum, id illo illum voluptas quod eius pariatur nihil necessitatibus voluptatem iusto corporis <br>
+            saepe facilis adipisci dolorem dolore accusamus, quasi, laudantium consequuntur!</p></div>
+
+        <div class="content" id="bottom" style="font-size: large;">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            <br>
+            Earum, id illo illum voluptas quod eius pariatur nihil necessitatibus voluptatem iusto corporis <br>
+            saepe facilis adipisci dolorem dolore accusamus, quasi, laudantium consequuntur!
+            <br>Lorem ipsum dolor sit amet consectetur adipisicing elit.<br>
+            Earum, id illo illum voluptas quod eius pariatur nihil necessitatibus voluptatem iusto corporis <br>
+            saepe facilis adipisci dolorem dolore accusamus, quasi, laudantium consequuntur!
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            <br>
+            Earum, id illo illum voluptas quod eius pariatur nihil necessitatibus voluptatem iusto corporis <br>
+            saepe facilis adipisci dolorem dolore accusamus, quasi, laudantium consequuntur!
+            <br>Lorem ipsum dolor sit amet consectetur adipisicing elit.<br>
+            Earum, id illo illum voluptas quod eius pariatur nihil necessitatibus voluptatem iusto corporis <br>
+            saepe facilis adipisci dolorem dolore accusamus, quasi, laudantium consequuntur!</p></div>
     
 </body>
 </html>
