@@ -457,7 +457,6 @@ li a:hover {
     }
 }
 
-/* Additional styles for the project section */
 .project-section {
     margin-top: 1.5rem;
     display: flex;
@@ -466,7 +465,7 @@ li a:hover {
 }
 
 .project-item {
-    flex: 1 1 300px; /* Adjust the width as needed */
+    flex: 1 1 300px; 
     border: 1px solid #ddd;
     border-radius: 8px;
     overflow: hidden;
@@ -479,7 +478,7 @@ li a:hover {
 
 .project-img {
     width: 100%;
-    height: 150px; /* Adjust the height as needed */
+    height: 150px; 
     object-fit: cover;
     overflow: hidden;
 }
@@ -488,12 +487,12 @@ li a:hover {
     padding: 1rem;
 }
 
-/* Additional styles for the skills section */
 .skills-section {
     margin-top: 2rem;
 }
 
 .skill-item {
+    width: 50%;
     margin-bottom: 1rem;
 }
 
@@ -503,7 +502,6 @@ li a:hover {
     margin-bottom: 0.5rem;
 }
 
-/* Additional styles for the progress bar */
 .progress-bar {
     height: 20px;
     background-color: #ddd;
@@ -517,7 +515,7 @@ li a:hover {
     position: absolute;
     height: 100%;
     width: var(--progress, 0%);
-    background-color: #3498db; /* Change color as needed */
+    background-color: #3498db;
     animation: progressAnimation 1s ease-in-out;
 }
 
@@ -525,7 +523,7 @@ li a:hover {
     width: 100%;
     content: attr(data-progress);
     position: absolute;
-    color: #000; /* Set text color */
+    color: #000;
     text-align: center;
 }
 
@@ -538,7 +536,6 @@ li a:hover {
     }
 }
 
-/* Additional styles for the fade-in animation */
 .fade-in {
     opacity: 0;
     animation: fadeInAnimation 1s ease forwards;
@@ -555,7 +552,6 @@ li a:hover {
     }
 }
 
-/* Additional styles for the about section */
 .about-section {
     padding: 4rem 0;
 }
@@ -565,7 +561,6 @@ li a:hover {
     margin: 0 auto;
 }
 
-/* Additional styles for the contact section */
 .contact-section {
     text-align: center;
     padding: 4rem 0;
@@ -582,10 +577,9 @@ li a:hover {
 .email,
 .landline {
     font-weight: bold;
-    color: #3498db; /* Set your preferred color */
+    color: #3498db;
 }
 
-/* Additional styles for the copyright section */
 .copyright-section {
     text-align: center;
     padding: 2rem 0;
@@ -596,6 +590,96 @@ li a:hover {
 }
 
 .separator-line {
-    border: 1px solid #ccc; /* Set the color of the line */
-    margin: 20px 0; /* Adjust the margin as needed */
+    border: 1px solid #ccc;
+    margin: 20px 0;
+}
+
+.message-form {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#editModal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 600px;
+    border-radius: 10px;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: black;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+.changing-background{
+    animation: changeColor 10s infinite alternate;
+}
+
+@keyframes changeColor {
+    from { background-color: #686363;}
+    to { background-color: #625e5e;} 
 }

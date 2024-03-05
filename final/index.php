@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,8 +8,21 @@
     <link rel="stylesheet" href="style.css">
     <title>AL Shahriar Rokon</title>
 </head>
-
 <body>
+    <?php
+        $servername = "localhost";
+        $database = "portfolio";
+        $username = "rokon";
+        $password = "rokon380";
+        $conn = new mysqli($servername, $username, $password, $database);
+        if ($conn->connect_error) {
+            die("Connection failed: " . $conn->connect_error);
+        } else {
+            echo '<script>alert("Database connected successfully");</script>';
+        }
+        $resultProjects = $conn->query("SELECT name, description, project_image FROM projects");
+        $conn->close();
+    ?>
     <header class="container">
         <div class="page-header">
             <div class="logo">
@@ -35,8 +47,7 @@
             </label>
         </div>
     </header>
-
-    <section class="container1">
+    <section class="container1" id="home">
         <div class="main">
             <div class="social">
                 <a href="#" style="--socialAni:1"><i class='bx bxl-linkedin'></i></a>
@@ -46,8 +57,7 @@
             <div class="detail">
                 <h1>Hi, I'm <span> a Student and </span></h1>
                 <h3>Web Developer</h3>
-                <p>I'm a professional Web Developer. I will not stop until my work is perfect or aesthetically pleasing.
-                </p>
+                <p>I'm a professional Web Developer. I will not stop until my work is perfect or aesthetically pleasing.</p>
                 <div class="btn">
                     <button>Download CV</button>
                 </div>
@@ -59,7 +69,6 @@
             </div>
         </div>
     </section>
-
     <section class="container1" id="about">
         <h2>About Me:</h2>
         <div class="about-content">
@@ -71,7 +80,6 @@
             </p>
         </div>
     </section>
-
     <section class="container1 skills-section" id="skill">
         <h2>Skills:</h2>
         <div class="skill-item">
@@ -82,37 +90,56 @@
             <div class="skill-name">CSS</div>
             <div class="progress-bar" style="--progress: 70%;">70%</div>
         </div>
-
         <div class="skill-item">
             <div class="skill-name">JavaScript</div>
             <div class="progress-bar" style="--progress: 50%;">50%</div>
         </div>
-
         <div class="skill-item">
             <div class="skill-name">PHP</div>
             <div class="progress-bar" style="--progress: 20%;">20%</div>
         </div>
-
     </section>
-
     <h2 class="container1" style="margin-top: 2rem;">Projects:</h2>
     <section class="container1 project-section" id="project">
-        <div class="project-item">
-            <img src="project1.jpg" alt="Project 1" class="project-img">
-            <div class="project-content">
-                <h3>Project 1</h3>
-                <p>Short description of Project 1.</p>
-            </div>
-        </div>
-        <div class="project-item">
-            <img src="project2.jpg" alt="Project 2" class="project-img">
-            <div class="project-content">
-                <h3>Project 2</h3>
-                <p>Short description of Project 2.</p>
-            </div>
+        <?php
+        if ($resultProjects->num_rows > 0) {
+            while ($row = $resultProjects->fetch_assoc()) {
+                echo '<div class="project-item">';
+                echo '<img src="data:image/jpeg;base64,' . base64_encode($row["project_image"]) . '" alt="' . $row["name"] . '" class="project-img">';
+                echo '<div class="project-content">';
+                echo '<h3>' . $row["name"] . '</h3>';
+                echo '<p>' . $row["description"] . '</p>';
+                echo '</div>';
+                echo '</div>';
+            }
+        } else {
+            echo '<p>No projects found.</p>';
+        }
+        ?>
+    </section>
+    <section class="container1 message-section" id="message">
+        <h2 class="container1 message-form" style="margin-top: 5rem;">Leave a Message:</h2>
+        <br>
+        <div class="message-form">
+            <form id="contactForm" action="admin.php" method="post">
+                <div class="form-group">
+                    <label for="name">Your Name:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Your Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Your Message:</label>
+                    <textarea id="message" name="message" rows="4" required></textarea>
+                </div>
+                <div class="form-group">
+                    <button type="submit">Send Message</button>
+                </div>
+            </form>
         </div>
     </section>
-
     <section class="container1 contact-section" id="contact">
         <h2>Contact Me:</h2>
         <div class="contact-content">
@@ -131,15 +158,12 @@
             </p>
         </div>
     </section>
-
     <hr class="separator-line">
     <section class="container1 copyright-section">
         <p>&copy; AL Shahriar Rokon. All rights reserved. Unauthorized use or reproduction of any content is prohibited.</p>
         <p>This website is protected by copyright law. Any attempt to copy or reproduce the content without permission may result in legal action.</p>
         <p>Warning: Unauthorized reproduction of content is subject to legal consequences.</p>
     </section>
-
     <script src="script.js"></script>
 </body>
-
 </html>
